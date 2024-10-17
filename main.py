@@ -1,11 +1,22 @@
-# lab 6
+# lab 6 by Hannah
 
-def add(x,y):
-	return x + y
+def looping_menu():
+    print("Menu")
+    print("-------------")
+    print("1. Encode")
+    print("2. Decode")
+    print("3. Quit")
+    print("")
+    print("Please enter an option:", end=' ')
+    option = int(input())
+    return option
 
-def subtract(x,y):
-    return x-y
 
-if __name__=='__main__':
-    print(add(1, 2))
-    print(subtract(3, 2))
+if __name__ == '__main__':
+    option = looping_menu()
+    while option != 3:
+        if option == 1:
+            pass
+        if option == 2:
+            pass
+        option = looping_menu()
