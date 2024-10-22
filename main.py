@@ -18,12 +18,15 @@ def encode(password):
         if letter.isdigit():
             letter = int(letter)
             letter += 3
+            if letter >= 10:
+                letter -= 10
             letter = str(letter)
             encoded_password += letter
     print('Your password has been encoded and stored!')
     return encoded_password
 
-def decode(password):
+def decode(encoded_password):
+    pass
 
 if __name__ == '__main__':
     option = looping_menu()
