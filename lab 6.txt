@@ -1,13 +1,35 @@
 # lab 6
 
-def add(x,y):
-	return x + y
+def looping_menu():
+    print("Menu")
+    print("-------------")
+    print("1. Encode")
+    print("2. Decode")
+    print("3. Quit")
+    print("")
+    print("Please enter an option:", end=' ')
+    option = int(input())
+    return option
 
-def subtract(x,y):
-    return x-y
 
-def multiplication(x,y):
-    return x * y
+def encode(password):
+    encoded_password = ""
+    for letter in password:
+        if letter.isdigit():
+            letter = int(letter)
+            letter += 3
+            letter = str(letter)
+            encoded_password += letter
+    print('Your password has been encoded and stored!')
 
-if __name__=='__main__':
-    print(add(1, 2))
+
+if __name__ == '__main__':
+    option = looping_menu()
+    while option != 3:
+        if option == 1:
+            print('Please enter your password to encode:', end = ' ')
+            password = input()
+            encode(password)
+        if option == 2:
+            pass
+        option = looping_menu()

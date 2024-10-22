@@ -21,7 +21,9 @@ def encode(password):
             letter = str(letter)
             encoded_password += letter
     print('Your password has been encoded and stored!')
+    return encoded_password
 
+def decode(password):
 
 if __name__ == '__main__':
     option = looping_menu()
@@ -29,7 +31,7 @@ if __name__ == '__main__':
         if option == 1:
             print('Please enter your password to encode:', end = ' ')
             password = input()
-            encode(password)
+            encoded_password = encode(password)
         if option == 2:
             pass
         option = looping_menu()
