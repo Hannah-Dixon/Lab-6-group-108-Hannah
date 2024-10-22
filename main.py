@@ -12,11 +12,24 @@ def looping_menu():
     return option
 
 
+def encode(password):
+    encoded_password = ""
+    for letter in password:
+        if letter.isdigit():
+            letter = int(letter)
+            letter += 3
+            letter = str(letter)
+            encoded_password += letter
+    print('Your password has been encoded and stored!')
+
+
 if __name__ == '__main__':
     option = looping_menu()
     while option != 3:
         if option == 1:
-            pass
+            print('Please enter your password to encode:', end = ' ')
+            password = input()
+            encode(password)
         if option == 2:
             pass
         option = looping_menu()
