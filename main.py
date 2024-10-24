@@ -26,7 +26,16 @@ def encode(password):
     return encoded_password
 
 def decode(encoded_password):
-    pass
+        digit = 0
+        new_password = ''
+        for i in range(len(encoded_password)):
+            digit = int(encoded_password[i]) - 3
+            if digit < 0:
+                digit = int(encoded_password[i]) + 10 - 3
+                new_password += str(digit)
+            else:
+                new_password += str(digit)
+        return new_password
 
 if __name__ == '__main__':
     option = looping_menu()
@@ -36,5 +45,6 @@ if __name__ == '__main__':
             password = input()
             encoded_password = encode(password)
         if option == 2:
-            pass
+            password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {password}.")
         option = looping_menu()
